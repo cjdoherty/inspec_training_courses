@@ -190,13 +190,13 @@ Next, move to your working directory.
 `cd ~/learn-inspec`  [or from Windows cmd prompt: `cd Desktop/learn-inspec`]
 
 ### 7.4.1. Run Vagrant to install the Virtual Environment
-Navigate to the `InSpec 102 Dev` folder and run the following command:  
+Navigate to the `InSpec-Developer-Course` folder and run the following command:  
 `$ vagrant up`
 
 Wait for vagrant to finish standing up the virtual environments.
 
 ### 7.4.2. Setup network in VirtualBox
-Open VirtualBox and shut down the 3 vm's that were created `workstation`, `target`, `target-centos6`.
+Open VirtualBox and power off the 3 VM's that were created `workstation`, `target`, `target-centos6`.
 
 Open Preference settings for VirtualBox (**not** the settings for the VM's)
 - Go to the network tab
@@ -206,7 +206,7 @@ Open Preference settings for VirtualBox (**not** the settings for the VM's)
 
 Click ok to save the settings.
 
-The following step you will repeat for the 3 vm's `workstation`, `target`, `target-centos6`.
+The following step you will repeat for the 3 VM's `workstation`, `target`, `target-centos6`.
  - Select the virtual machine
  - Click on settings for the virtual machine
  - Navigate to the network tab
@@ -218,7 +218,7 @@ The following step you will repeat for the 3 vm's `workstation`, `target`, `targ
  ![Alt text](../images/NatNetwork_VM_Setup.png?raw=true "NatNetwork VM Setup")
 
  - Next you need to Select the Shared Folders
- - Click the + symbol to add a new Shared Folder
+ - Click the + symbol to add a new Shared Folder (Make sure you add it to the machine folder, not transient)
  ![Alt text](../images/Add_Shared_Folder.png?raw=true "Add Shared Folder")
  - For Folder Path select the dropdown and select `Other`, navigate to your `~/learn-inspec` folder and select that
  ![Alt text](../images/Select_Shared_Folder.png?raw=true "Select Shared Folder")
@@ -248,8 +248,12 @@ Target-CentOS6:
 u: vagrant  
 p: vagrant
 
-AWS Credentials
+Connectivity
 ---
+If You are getting connection errors (404 or 443) make sure you are not using a proxy network.
+
+AWS Credentials
+
 Target:  
 u: ubuntu
 
@@ -272,7 +276,7 @@ $ ping TARGET_IP
 # 8. Studying an InSpec profile
 Let's start by creating a profile that will contain NGINX tests.
 
-Start by moving to the /root directory.
+Start by moving to the /root directory in the workstation machine.
 
 ```$ cd ~```
 
